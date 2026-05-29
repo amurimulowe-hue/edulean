@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Plateforme d'Apprentissage en Ligne</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="#" class="logo" data-nav="home">
+                <i class="fas fa-graduation-cap"></i>
+                <span>EduLearn</span>
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active" data-nav="home">Accueil</a></li>
+                    <li><a href="#" class="nav-link" data-nav="courses">Cours</a></li>
+                    <li><a href="#" class="nav-link" data-nav="instructors">Formateurs</a></li>
+                    <li><a href="#" class="nav-link" data-nav="dashboard">Tableau de bord</a></li>
+                </ul>
+            </nav>
+            <div class="header-search">
+                <input type="text" id="searchInput" placeholder="Rechercher un cours..." class="search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-outline" id="loginBtn">Connexion</button>
+                <button class="btn btn-primary" id="signupBtn">Inscription</button>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section hero-section" id="home">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <h1 class="hero-title">Apprenez sans limites, <span class="highlight">évoluez</span> sans frontières</h1>
+                <p class="hero-subtitle">Accédez à des milliers de cours en ligne dispensés par des experts. Développez vos compétences à votre rythme et obtenez des certifications reconnues.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary btn-lg" data-nav="courses">Explorer les cours</a>
+                    <a href="#" class="btn btn-outline btn-lg" id="heroSignup">Commencer gratuitement</a>
+                </div>
+                <div class="hero-badges">
+                    <span class="badge"><i class="fas fa-check-circle"></i> Certifications reconnues</span>
+                    <span class="badge"><i class="fas fa-check-circle"></i> Accès illimité</span>
+                    <span class="badge"><i class="fas fa-check-circle"></i> Support 24/7</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/poje7lyaag3q/hero-elearning-students.png" alt="Étudiants en ligne">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">15 000+</div>
+                <div class="stat-label">Étudiants</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Cours</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Formateurs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section categories-section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explorez nos catégories</h2>
+                <p class="section-subtitle">Trouvez le domaine qui vous passionne parmi nos nombreuses catégories</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="web">
+                    <div class="category-icon"><i class="fas fa-code"></i></div>
+                    <h3>Développement Web</h3>
+                    <p>120 cours</p>
+                </div>
+                <div class="category-card" data-category="data">
+                    <div class="category-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Data Science</h3>
+                    <p>85 cours</p>
+                </div>
+                <div class="category-card" data-category="marketing">
+                    <div class="category-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Marketing Digital</h3>
+                    <p>95 cours</p>
+                </div>
+                <div class="category-card" data-category="design">
+                    <div class="category-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Design UI/UX</h3>
+                    <p>70 cours</p>
+                </div>
+                <div class="category-card" data-category="business">
+                    <div class="category-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Business</h3>
+                    <p>110 cours</p>
+                </div>
+                <div class="category-card" data-category="languages">
+                    <div class="category-icon"><i class="fas fa-language"></i></div>
+                    <h3>Langues</h3>
+                    <p>60 cours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses Section -->
+    <section class="section courses-section" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cours populaires</h2>
+                <p class="section-subtitle">Découvrez les cours les plus appréciés par nos étudiants</p>
+            </div>
+            <div class="courses-filter">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="data">Data</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card" data-category="web" data-id="1">
+                    <div class="course-image">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/pojfsiiaag6q/course-web-development.png" alt="Développement Web Complet">
+                        <span class="course-badge">Développement Web</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Développement Web Complet 2026</h3>
+                        <p class="course-instructor"><i class="fas fa-user"></i> Marc Dupont</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>4.8 (2 340)</span>
+                            </div>
+                            <span class="course-students"><i class="fas fa-users"></i> 8 500</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">58,25 $</span>
+                            <button class="btn btn-sm btn-primary">Voir le cours</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card" data-category="data" data-id="2">
+                    <div class="course-image">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/pojfthqaag4q/course-data-science.png" alt="Data Science avec Python">
+                        <span class="course-badge">Data Science</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Data Science avec Python</h3>
+                        <p class="course-instructor"><i class="fas fa-user"></i> Thomas Bernard</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.9 (1 890)</span>
+                            </div>
+                            <span class="course-students"><i class="fas fa-users"></i> 6 200</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">69,66 $</span>
+                            <button class="btn btn-sm btn-primary">Voir le cours</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card" data-category="marketing" data-id="3">
+                    <div class="course-image">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/pojfrrqaag4a/course-digital-marketing.png" alt="Marketing Digital Avancé">
+                        <span class="course-badge">Marketing Digital</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Marketing Digital Avancé</h3>
+                        <p class="course-instructor"><i class="fas fa-user"></i> Sophie Martin</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>4.6 (1 560)</span>
+                            </div>
+                            <span class="course-students"><i class="fas fa-users"></i> 5 100</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">46,59 $</span>
+                            <button class="btn btn-sm btn-primary">Voir le cours</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card" data-category="design" data-id="4">
+                    <div class="course-image">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/pojfs3iaag3q/course-uiux-design.png" alt="UI/UX Design Masterclass">
+                        <span class="course-badge">Design UI/UX</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">UI/UX Design Masterclass</h3>
+                        <p class="course-instructor"><i class="fas fa-user"></i> Sophie Martin</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>4.7 (2 100)</span>
+                            </div>
+                            <span class="course-students"><i class="fas fa-users"></i> 7 300</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price">52,33 $</span>
+                            <button class="btn btn-sm btn-primary">Voir le cours</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section class="section instructors-section" id="instructors">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos formateurs experts</h2>
+                <p class="section-subtitle">Apprenez auprès des meilleurs professionnels du secteur</p>
+            </div>
+            <div class="instructors-grid">
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/poje4fiaag3a/instructor-male-professional.png" alt="Marc Dupont">
+                    </div>
+                    <div class="instructor-content">
+                        <h3>Marc Dupont</h3>
+                        <p class="instructor-specialty">Développement Web & Mobile</p>
+                        <div class="instructor-stats">
+                            <span><i class="fas fa-users"></i> 12 500 étudiants</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                            <span><i class="fas fa-play-circle"></i> 25 cours</span>
+                        </div>
+                        <div class="instructor-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/poje5dqaahaa/instructor-female-webdev.png" alt="Sophie Martin">
+                    </div>
+                    <div class="instructor-content">
+                        <h3>Sophie Martin</h3>
+                        <p class="instructor-specialty">UX Design & Marketing Digital</p>
+                        <div class="instructor-stats">
+                            <span><i class="fas fa-users"></i> 9 800 étudiants</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                            <span><i class="fas fa-play-circle"></i> 18 cours</span>
+                        </div>
+                        <div class="instructor-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/poje4iaaag6q/instructor-male-datascience.png" alt="Thomas Bernard">
+                    </div>
+                    <div class="instructor-content">
+                        <h3>Thomas Bernard</h3>
+                        <p class="instructor-specialty">Data Science & Intelligence Artificielle</p>
+                        <div class="instructor-stats">
+                            <span><i class="fas fa-users"></i> 8 200 étudiants</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                            <span><i class="fas fa-play-circle"></i> 15 cours</span>
+                        </div>
+                        <div class="instructor-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ce que disent nos étudiants</h2>
+                <p class="section-subtitle">Des milliers d'étudiants satisfaits partagent leur expérience</p>
+            </div>
+            <div class="testimonials-slider" id="testimonialSlider">
+                <div class="testimonial-track">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>EduLearn a complètement transformé ma carrière. Grâce aux cours de développement web, j'ai pu décrocher mon premier emploi en tant que développeur frontend en seulement 6 mois.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Alexandre Petit</h4>
+                                <p>Développeur Frontend</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>La qualité des cours de Data Science est exceptionnelle. Les formateurs sont pédagogues et les projets pratiques m'ont permis de construire un portfolio solide.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Marie Leroy</h4>
+                                <p>Data Analyst</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>J'apprécie la flexibilité d'EduLearn. Je peux apprendre à mon rythme, le soir après le travail. Les certificats m'ont aidé à obtenir une promotion.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Lucas Moreau</h4>
+                                <p>Chef de projet digital</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn prev" id="prevTestimonial"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots" id="testimonialDots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="testimonial-btn next" id="nextTestimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Detail Section -->
+    <section class="section course-detail-section hidden" id="courseDetail">
+        <div class="container">
+            <button class="btn btn-outline back-btn" id="backToCourses"><i class="fas fa-arrow-left"></i> Retour aux cours</button>
+            <div class="course-detail-grid">
+                <div class="course-detail-main">
+                    <div class="course-video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Aperçu du cours</p>
+                    </div>
+                    <div class="course-detail-tabs">
+                        <button class="tab-btn active" data-tab="description">Description</button>
+                        <button class="tab-btn" data-tab="curriculum">Programme</button>
+                        <button class="tab-btn" data-tab="reviews">Avis</button>
+                    </div>
+                    <div class="tab-content active" id="tab-description">
+                        <h3>À propos de ce cours</h3>
+                        <p>Ce cours complet vous guidera à travers tous les aspects essentiels du développement web moderne. Vous apprendrez HTML5, CSS3, JavaScript, React, Node.js et bien plus encore.</p>
+                        <h4>Ce que vous apprendrez :</h4>
+                        <ul class="learn-list">
+                            <li><i class="fas fa-check"></i> Maîtriser HTML5 et CSS3 avancé</li>
+                            <li><i class="fas fa-check"></i> Créer des applications JavaScript modernes</li>
+                            <li><i class="fas fa-check"></i> Développer des interfaces avec React</li>
+                            <li><i class="fas fa-check"></i> Construire des APIs avec Node.js</li>
+                            <li><i class="fas fa-check"></i> Déployer vos applications en production</li>
+                            <li><i class="fas fa-check"></i> Utiliser Git et les outils de développement</li>
+                        </ul>
+                        <h4>Prérequis :</h4>
+                        <ul class="learn-list">
+                            <li><i class="fas fa-info-circle"></i> Aucune expérience préalable requise</li>
+                            <li><i class="fas fa-info-circle"></i> Un ordinateur avec accès internet</li>
+                            <li><i class="fas fa-info-circle"></i> Motivation et envie d'apprendre</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="tab-curriculum">
+                        <h3>Programme du cours</h3>
+                        <div class="curriculum-list">
+                            <div class="curriculum-section">
+                                <div class="curriculum-header">
+                                    <h4><i class="fas fa-folder"></i> Module 1 : Introduction au Web</h4>
+                                    <span>5 leçons • 2h 30min</span>
+                                </div>
+                                <ul class="curriculum-lessons">
+                                    <li><i class="fas fa-play-circle"></i> Comment fonctionne Internet <span>15:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> Les outils du développeur <span>20:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> Votre premier site web <span>35:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> Structure HTML de base <span>30:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> Quiz : Les fondamentaux <span>10:00</span></li>
+                                </ul>
+                            </div>
+                            <div class="curriculum-section">
+                                <div class="curriculum-header">
+                                    <h4><i class="fas fa-folder"></i> Module 2 : CSS Avancé</h4>
+                                    <span>8 leçons • 4h 15min</span>
+                                </div>
+                                <ul class="curriculum-lessons">
+                                    <li><i class="fas fa-play-circle"></i> Flexbox en profondeur <span>45:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> CSS Grid Layout <span>40:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> Animations et transitions <span>35:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> Design responsive <span>50:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> Projet pratique <span>60:00</span></li>
+                                </ul>
+                            </div>
+                            <div class="curriculum-section">
+                                <div class="curriculum-header">
+                                    <h4><i class="fas fa-folder"></i> Module 3 : JavaScript Moderne</h4>
+                                    <span>10 leçons • 6h 00min</span>
+                                </div>
+                                <ul class="curriculum-lessons">
+                                    <li><i class="fas fa-play-circle"></i> Variables et types de données <span>30:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> Fonctions et closures <span>45:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> Manipulation du DOM <span>40:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> Async/Await et Promises <span>50:00</span></li>
+                                    <li><i class="fas fa-play-circle"></i> Projet final JavaScript <span>90:00</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="tab-reviews">
+                        <h3>Avis des étudiants</h3>
+                        <div class="reviews-summary">
+                            <div class="reviews-average">
+                                <span class="big-rating">4.8</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>2 340 avis</span>
+                            </div>
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-avatar"><i class="fas fa-user-circle"></i></div>
+                                    <div>
+                                        <h4>Pierre Durand</h4>
+                                        <div class="stars small">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">Il y a 2 semaines</span>
+                                </div>
+                                <p>Excellent cours ! Très bien structuré et le formateur explique clairement. J'ai pu créer mon premier site web professionnel après seulement 3 semaines.</p>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-avatar"><i class="fas fa-user-circle"></i></div>
+                                    <div>
+                                        <h4>Camille Roux</h4>
+                                        <div class="stars small">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">Il y a 1 mois</span>
+                                </div>
+                                <p>Bon contenu dans l'ensemble. J'aurais aimé plus d'exercices pratiques sur la partie backend, mais la section frontend est vraiment complète.</p>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-avatar"><i class="fas fa-user-circle"></i></div>
+                                    <div>
+                                        <h4>Julien Blanc</h4>
+                                        <div class="stars small">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">Il y a 2 mois</span>
+                                </div>
+                                <p>Le meilleur investissement que j'ai fait pour ma carrière. Marc est un excellent pédagogue et le support de la communauté est incroyable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-detail-sidebar">
+                    <div class="sidebar-card">
+                        <div class="sidebar-price">49,99 €</div>
+                        <button class="btn btn-primary btn-block">S'inscrire maintenant</button>
+                        <button class="btn btn-outline btn-block">Ajouter au panier</button>
+                        <ul class="sidebar-features">
+                            <li><i class="fas fa-clock"></i> 42 heures de vidéo</li>
+                            <li><i class="fas fa-file"></i> 85 ressources téléchargeables</li>
+                            <li><i class="fas fa-infinity"></i> Accès à vie</li>
+                            <li><i class="fas fa-mobile-alt"></i> Accès mobile et TV</li>
+                            <li><i class="fas fa-certificate"></i> Certificat de réussite</li>
+                            <li><i class="fas fa-undo"></i> Garantie 30 jours</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="section dashboard-section hidden" id="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Tableau de bord</h2>
+                <p>Bienvenue, Jean ! Continuez votre apprentissage.</p>
+            </div>
+            <div class="dashboard-stats">
+                <div class="dash-stat-card">
+                    <div class="dash-stat-icon"><i class="fas fa-book-open"></i></div>
+                    <div>
+                        <h3>4</h3>
+                        <p>Cours en cours</p>
+                    </div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-icon"><i class="fas fa-check-circle"></i></div>
+                    <div>
+                        <h3>2</h3>
+                        <p>Cours terminés</p>
+                    </div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-icon"><i class="fas fa-certificate"></i></div>
+                    <div>
+                        <h3>2</h3>
+                        <p>Certificats</p>
+                    </div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-icon"><i class="fas fa-clock"></i></div>
+                    <div>
+                        <h3>48h</h3>
+                        <p>Temps d'étude</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-tabs">
+                <button class="dash-tab-btn active" data-dashtab="enrolled">Mes cours</button>
+                <button class="dash-tab-btn" data-dashtab="certificates">Certificats</button>
+                <button class="dash-tab-btn" data-dashtab="activity">Activité récente</button>
+            </div>
+            <div class="dash-tab-content active" id="dashtab-enrolled">
+                <div class="enrolled-courses">
+                    <div class="enrolled-card">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/pojfsiiaag6q/course-web-development.png" alt="Web Dev">
+                        <div class="enrolled-info">
+                            <h4>Développement Web Complet 2026</h4>
+                            <p>Marc Dupont</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 72%"></div>
+                            </div>
+                            <span class="progress-text">72% terminé</span>
+                        </div>
+                        <button class="btn btn-sm btn-primary">Continuer</button>
+                    </div>
+                    <div class="enrolled-card">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/pojfthqaag4q/course-data-science.png" alt="Data Science">
+                        <div class="enrolled-info">
+                            <h4>Data Science avec Python</h4>
+                            <p>Thomas Bernard</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%"></div>
+                            </div>
+                            <span class="progress-text">45% terminé</span>
+                        </div>
+                        <button class="btn btn-sm btn-primary">Continuer</button>
+                    </div>
+                    <div class="enrolled-card">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/pojfs3iaag3q/course-uiux-design.png" alt="UI/UX">
+                        <div class="enrolled-info">
+                            <h4>UI/UX Design Masterclass</h4>
+                            <p>Sophie Martin</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 20%"></div>
+                            </div>
+                            <span class="progress-text">20% terminé</span>
+                        </div>
+                        <button class="btn btn-sm btn-primary">Continuer</button>
+                    </div>
+                    <div class="enrolled-card">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/1288670/2026-05-28/pojfrrqaag4a/course-digital-marketing.png" alt="Marketing">
+                        <div class="enrolled-info">
+                            <h4>Marketing Digital Avancé</h4>
+                            <p>Sophie Martin</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 10%"></div>
+                            </div>
+                            <span class="progress-text">10% terminé</span>
+                        </div>
+                        <button class="btn btn-sm btn-primary">Continuer</button>
+                    </div>
+                </div>
+            </div>
+            <div class="dash-tab-content" id="dashtab-certificates">
+                <div class="certificates-grid">
+                    <div class="certificate-card">
+                        <div class="certificate-icon"><i class="fas fa-award"></i></div>
+                        <h4>HTML & CSS Fondamentaux</h4>
+                        <p>Obtenu le 15 mars 2026</p>
+                        <p class="certificate-instructor">Par Marc Dupont</p>
+                        <button class="btn btn-sm btn-outline"><i class="fas fa-download"></i> Télécharger</button>
+                    </div>
+                    <div class="certificate-card">
+                        <div class="certificate-icon"><i class="fas fa-award"></i></div>
+                        <h4>JavaScript Essentials</h4>
+                        <p>Obtenu le 28 avril 2026</p>
+                        <p class="certificate-instructor">Par Marc Dupont</p>
+                        <button class="btn btn-sm btn-outline"><i class="fas fa-download"></i> Télécharger</button>
+                    </div>
+                </div>
+            </div>
+            <div class="dash-tab-content" id="dashtab-activity">
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon"><i class="fas fa-play"></i></div>
+                        <div class="activity-info">
+                            <p>Vous avez terminé la leçon <strong>"Flexbox en profondeur"</strong></p>
+                            <span>Il y a 2 heures</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon"><i class="fas fa-check"></i></div>
+                        <div class="activity-info">
+                            <p>Quiz réussi : <strong>"Les fondamentaux du CSS"</strong> - Score : 92%</p>
+                            <span>Hier</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon"><i class="fas fa-play"></i></div>
+                        <div class="activity-info">
+                            <p>Vous avez commencé le module <strong>"CSS Grid Layout"</strong></p>
+                            <span>Il y a 2 jours</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="activity-info">
+                            <p>Certificat obtenu : <strong>"JavaScript Essentials"</strong></p>
+                            <span>Il y a 1 semaine</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <div class="activity-info">
+                            <p>Inscription au cours <strong>"Marketing Digital Avancé"</strong></p>
+                            <span>Il y a 1 semaine</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>EduLearn</span>
+                    </div>
+                    <p>La plateforme d'apprentissage en ligne qui vous accompagne dans votre développement professionnel.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Cours</a></li>
+                        <li><a href="#">Formateurs</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Carrières</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Recevez nos dernières actualités et offres exclusives.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email" class="newsletter-input">
+                        <button type="submit" class="btn btn-primary">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EduLearn. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2>Connexion</h2>
+            <p class="modal-subtitle">Accédez à votre espace d'apprentissage</p>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="votre@email.com" required>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Mot de passe</label>
+                    <input type="password" id="loginPassword" placeholder="Votre mot de passe" required>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Se souvenir de moi
+                    </label>
+                    <a href="#" class="forgot-link">Mot de passe oublié ?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+            </form>
+            <div class="modal-divider"><span>ou</span></div>
+            <div class="social-login">
+                <button class="btn btn-social google"><i class="fab fa-google"></i> Google</button>
+                <button class="btn btn-social facebook"><i class="fab fa-facebook"></i> Facebook</button>
+            </div>
+            <p class="modal-switch">Pas encore de compte ? <a href="#" id="switchToSignup">S'inscrire</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2>Inscription</h2>
+            <p class="modal-subtitle">Créez votre compte gratuitement</p>
+            <form id="signupForm" class="auth-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signupFirstName">Prénom</label>
+                        <input type="text" id="signupFirstName" placeholder="Jean" required>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupLastName">Nom</label>
+                        <input type="text" id="signupLastName" placeholder="Dupont" required>
+                        <span class="form-error"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="votre@email.com" required>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Mot de passe</label>
+                    <input type="password" id="signupPassword" placeholder="Minimum 8 caractères" required>
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required> J'accepte les <a href="#">conditions d'utilisation</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Créer mon compte</button>
+            </form>
+            <div class="modal-divider"><span>ou</span></div>
+            <div class="social-login">
+                <button class="btn btn-social google"><i class="fab fa-google"></i> Google</button>
+                <button class="btn btn-social facebook"><i class="fab fa-facebook"></i> Facebook</button>
+            </div>
+            <p class="modal-switch">Déjà un compte ? <a href="#" id="switchToLogin">Se connecter</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
